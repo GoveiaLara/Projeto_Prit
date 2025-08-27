@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doação ECOMAR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <section class="logo">
+      <a href="../inicio.html">
+        <img src="logo.png" alt="Logo ECOMAR">
+      </a>
+    </section>
+  </header>
+  <section class="container">
+    <section class="etapas">
+      <span id="step1">1</span>
+      <span id="step2">2</span>
+      <span id="step3">3</span>
+      <span id="step4">4</span>
+    </section>
+
+    <!-- Etapa 1 -->
+    <section class="etapa ativa" id="etapa1">
+      <h2>Você tem o poder da mudança.</h2>
+      <p class="texto-central">Tipo da Doação: Doação Mensal</p>
+      <section class="valores">
+        <button onclick="selecionarValor(this)">R$02</button>
+        <button onclick="selecionarValor(this)">R$05</button>
+        <button onclick="selecionarValor(this)">R$25</button>
+        <button onclick="selecionarValor(this)">Outro valor</button>
+      </section>
+      <button class="botao" onclick="mostrarEtapa(2)">Próximo</button>
+    </section>
+
+    <!-- Etapa 2 -->
+    <section class="etapa" id="etapa2">
+      <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="text" placeholder="Sobrenome" required>
+        <input type="text" placeholder="Data de Nascimento (dd/mm/aaaa)" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Telefone" required>
+        <label class="checkbox">
+          <input type="checkbox"> <span>Aceito receber comunicações da ECOMAR.</span>
+        </label>
+        <section class="botoes">
+          <button type="button" class="botao" onclick="mostrarEtapa(1)">Voltar</button>
+          <button type="button" class="botao" onclick="mostrarEtapa(3)">Próximo</button>
+        </section>
+      </form>
+    </section>
+
+    <!-- Etapa 3 -->
+    <section class="etapa" id="etapa3">
+      <h2>Resumo da Doação</h2>
+      <p>Nome: Fulano</p>
+      <p>Sobrenome: de Tal</p>
+      <p>E-mail: fulanodetal@gmail.com</p>
+      <p>Tipo da Doação: Doação Mensal</p>
+      <p>Valor da Doação: <span id="valorSelecionado">R$ 0,00</span></p>
+      <form>
+        <input type="text" placeholder="Nome do titular do cartão" required>
+        <input type="text" placeholder="Número do cartão" required>
+        <input type="text" placeholder="Data de venc." required>
+        <input type="text" placeholder="CVV" required>
+        <section class="botoes">
+          <button type="button" class="botao" onclick="mostrarEtapa(2)">Voltar</button>
+          <button type="button" class="botao-destaque" onclick="mostrarEtapa(4)">Concluir doação</button>
+        </section>
+      </form>
+    </section>
+
+    <!-- Etapa 4 -->
+    <section class="etapa" id="etapa4">
+      <h2>Obrigado pela sua doação!</h2>
+      <p>Você receberá um e-mail de confirmação em breve.</p>
+      <p>O valor será debitado na sua fatura.</p>
+      <section class="pacotes">
+        <button class="botao-destaque">Nossos pacotes</button>
+      </section>
+      <button class="botao" onclick="mostrarEtapa(3)">Voltar</button>
+    </section>
+  </section>
+
+  <script>
+    function mostrarEtapa(numero) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`etapa${i}`).classList.remove('ativa');
+        document.getElementById(`step${i}`).classList.remove('ativo');
+      }
+      document.getElementById(`etapa${numero}`).classList.add('ativa');
+      document.getElementById(`step${numero}`).classList.add('ativo');
+    }
+
+    function selecionarValor(botao) {
+      const botoes = document.querySelectorAll('.valores button');
+      botoes.forEach(btn => btn.classList.remove('selecionado'));
+      botao.classList.add('selecionado');
+      document.getElementById('valorSelecionado').textContent = botao.textContent;
+    }
+  </script>
+  <footer>
+    <section class="footer-container">
+      <section class="footer-column">
+        <ul>
+          <li><a href="../Quem Somos/quemsomos.html">Quem somos?</a></li>
+          <li><a href="../Agenda/agenda.html">Próximas viagens</a></li>
+        </ul>
+      </section>
+      <section class="footer-column">
+        <ul>
+          <li><a href="../Duvidas/duvida.html">Dúvidas</a></li>
+          <li><a href="../Contato/contato.html">Contato</a></li>
+          <li><a href="../Doação/doação.html">Doações</a></li>
+        </ul>
+      </section>
+      <section class="footer-column">
+        <form action="#" method="post">
+          <label for="email">Receba promoções via e-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail">
+          <button type="submit">
+            <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="Enviar">
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <section class="footer-bottom">
+      <p>CNPJ: 04.569.290/0001-69</p>
+      <section class="social-icons">
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="Facebook"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=fJp7hepMryiw&format=png&color=000000" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=85088&format=png&color=000000" alt="WhatsApp"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=37326&format=png&color=000000" alt="YouTube"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=85154&format=png&color=000000" alt="Instagram"></a>
+      </section>
+    </section>
+  </footer>
+</body>
+</html>
