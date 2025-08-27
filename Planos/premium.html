@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planos Marinhos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-logo">
+      <a href="../inicio.html">
+        <img src="logo.png" alt="Logo Planos Marinhos" class="logo-img">
+      </a>
+    </div>
+    <h1>Explore o Mundo Marinho</h1>
+    <p>Escolha o plano ideal para sua jornada submarina</p>
+  </header>
+
+  <section class="planos">
+    <!-- Plano Essencial -->
+    <section class="plano">
+      <h2>Plano Essencial</h2>
+      <p>Para quem quer começar a explorar o mundo marinho com economia e segurança.</p>
+      <section class="preco">A PARTIR DE R$ 39,90/mês</section>
+      <button class="botao">Assine agora</button>
+      <button class="beneficios" onclick="toggleBeneficios('essencial')">MOSTRAR BENEFÍCIOS</button>
+      <ul id="beneficios-essencial" class="lista-beneficios">
+        <li>Exploração segura e econômica do mundo marinho</li>
+        <li>Ideal para iniciantes</li>
+      </ul>
+    </section>
+
+    <!-- Plano Explorer -->
+    <section class="plano">
+      <h2>Plano Explorer</h2>
+      <p>Perfeito para amantes do oceano que buscam experiências mais profundas.</p>
+      <section class="preco">A PARTIR DE R$ 89,90/mês</section>
+      <button class="botao">Assine agora</button>
+      <button class="beneficios" onclick="toggleBeneficios('explorer')">MOSTRAR BENEFÍCIOS</button>
+      <ul id="beneficios-explorer" class="lista-beneficios">
+        <li>Acesso exclusivo a mergulhos e passeios em locais remotos</li>
+        <li>Descontos de até 20% em hospedagens ecológicas</li>
+        <li>Consultoria personalizada focada em ecoturismo</li>
+        <li>VIP e reserva antecipada para eventos culturais</li>
+        <li>Suporte 24h com assistência cultural</li>
+      </ul>
+    </section>
+
+    <!-- Plano Ocean Infinity -->
+    <section class="plano">
+      <h2>Plano Ocean Infinity</h2>
+      <p>Para os verdadeiros apaixonados pelo mar, viagens transformadoras e exclusivas.</p>
+      <section class="preco">A PARTIR DE R$ 199,90/mês</section>
+      <button class="botao">Assine agora</button>
+      <button class="beneficios" onclick="toggleBeneficios('infinity')">MOSTRAR BENEFÍCIOS</button>
+      <ul id="beneficios-infinity" class="lista-beneficios">
+        <li>Ingressos VIP e acesso antecipado a eventos de ecoturismo e cultura</li>
+        <li>Suporte 24h para organização completa da viagem</li>
+        <li>Experiências exclusivas em parques naturais e reservas</li>
+        <li>Programa de fidelidade com benefícios para futuras viagens</li>
+        <li>Conteúdos educativos e cursos sobre conservação ambiental</li>
+      </ul>
+    </section>
+  </section>
+
+  <script>
+    function toggleBeneficios(plano) {
+      const lista = document.getElementById(`beneficios-${plano}`);
+      const botao = lista.previousElementSibling;
+      if (lista.style.display === "none" || lista.style.display === "") {
+        lista.style.display = "block";
+        botao.textContent = "OCULTAR BENEFÍCIOS";
+      } else {
+        lista.style.display = "none";
+        botao.textContent = "MOSTRAR BENEFÍCIOS";
+      }
+    }
+  </script>
+
+  <footer>
+    <section class="footer-container">
+      <section class="footer-column">
+        <ul>
+          <li><a href="../Quem Somos/quemsomos.html">Quem somos?</a></li>
+          <li><a href="../Agenda/agenda.html">Próximas viagens</a></li>
+        </ul>
+      </section>
+      <section class="footer-column">
+        <ul>
+          <li><a href="../Duvidas/duvida.html">Dúvidas</a></li>
+          <li><a href="../Contato/contato.html">Contato</a></li>
+          <li><a href="../Doação/doação.html">Doações</a></li>
+        </ul>
+      </section>
+      <section class="footer-column">
+        <form action="#" method="post">
+          <label for="email">Receba promoções via e-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Seu e-mail">
+          <button type="submit">
+            <img src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="Enviar">
+          </button>
+        </form>
+      </section>
+    </section>
+
+    <section class="footer-bottom">
+      <p>CNPJ: 04.569.290/0001-69</p>
+      <section class="social-icons">
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=118467&format=png&color=000000" alt="Facebook"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=fJp7hepMryiw&format=png&color=000000" alt="Twitter"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=85088&format=png&color=000000" alt="WhatsApp"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=37326&format=png&color=000000" alt="YouTube"></a>
+        <a href="#"><img src="https://img.icons8.com/?size=100&id=85154&format=png&color=000000" alt="Instagram"></a>
+      </section>
+    </section>
+  </footer>
+
+</body>
+</html>
+
